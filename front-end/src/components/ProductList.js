@@ -13,7 +13,7 @@ function ProductList() {
     // Function to fetch the list of products from the server
     const getProducts = async () => {
         // Send a GET request to fetch products, including the authorization token
-        let result = await fetch('https://e-dashborad.onrender.com/products', {
+        let result = await fetch('https://e-dashboard-x01t.onrender.com/products', {
             headers: {
                 authorization:`bearer ${JSON.parse(localStorage.getItem('token'))}`
             }
