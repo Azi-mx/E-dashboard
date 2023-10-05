@@ -138,7 +138,7 @@ app.get('/search/:key', async (req, res) => {
 async function verifyToken(req, res, next) {
     // console.log(req.headers);
     // let token = req.headers['authorization']; // Get the JWT token from the request header
-    const token = req.headers.authorization.split('')[1];
+    const token = req.headers.authorization.split(' ')[1];
     if (token) {
         
 
