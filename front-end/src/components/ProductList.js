@@ -27,7 +27,7 @@ function ProductList() {
     // Function to delete a product by its ID
     const deleteProduct = async (id) => {
         // Send a DELETE request to delete the product by ID
-        let result = await fetch(`https://e-dashborad.onrender.com/product/${id}`, {
+        let result = await fetch(`https://e-dashboard-x01t.onrender.com/product/${id}`, {
             method: 'Delete',
             headers: {
                 authorization:`bearer ${JSON.parse(localStorage.getItem('token'))}`
@@ -50,7 +50,7 @@ function ProductList() {
 
         if (key) {
             // Send a GET request to search for products using the provided key
-            let result = await fetch(`https://e-dashborad.onrender.com/search/${key}`);
+            let result = await fetch(`https://e-dashboard-x01t.onrender.com/search/${key}`);
             result = await result.json();
 
             if (result) {
