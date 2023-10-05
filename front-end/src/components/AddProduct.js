@@ -24,7 +24,7 @@ export default function () {
         // console.log(userid)
         const authToken = JSON.parse(localStorage.getItem('token')); // Assuming your authentication token is stored in localStorage
 
-let result = await fetch('https://e-dashborad.onrender.com/add-product', {
+let result = await fetch('https://e-dashboard-x01t.onrender.com/add-product', {
     method: 'post',
     body: JSON.stringify({ name, price, category, company, userid, authToken }),
     headers: {

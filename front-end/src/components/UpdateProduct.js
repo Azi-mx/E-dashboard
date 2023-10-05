@@ -16,7 +16,7 @@ export default function () {
     },[])
 
     const getProductDetails = async ()=>{
-        let result = await fetch(`https://e-dashborad.onrender.com/product/${params.id}`,{
+        let result = await fetch(`https://e-dashboard-x01t.onrender.com/product/${params.id}`,{
         headers: {
             authorization:`bearer ${JSON.parse(localStorage.getItem('token'))}`
         }})
@@ -29,7 +29,7 @@ export default function () {
     }
     const updateProduct = async ()=>{
         console.log(name,price,category,company);
-        let result = await fetch(`https://e-dashborad.onrender.com/product/${params.id}`,
+        let result = await fetch(`https://e-dashboard-x01t.onrender.com/product/${params.id}`,
         {
             method:"Put",
             body:JSON.stringify({name,price,category,company}),

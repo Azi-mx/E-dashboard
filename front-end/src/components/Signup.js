@@ -26,12 +26,12 @@ export default function Signup() {
           password:password
         }
         //Here api is integrated using fetch method and the data will only fetch when localhost is running on local
-        let result = await fetch('https://e-dashborad.onrender.com/register',
+        let result = await fetch('https://e-dashboard-x01t.onrender.com/register',
         {
           method:'post',
           //We are using json.stringify just because we are send data so data should be in Json format
           //The data we got by using use state will be now sent to database for registration
-          body:JSON.stringify({res}),
+          body:JSON.stringify(res),
           headers:{
             'Content-type':'application/json'
           }

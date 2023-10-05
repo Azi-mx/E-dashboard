@@ -13,7 +13,7 @@ export default function Login() {
       },[])
     const handlelogin = async ()=>{
         console.log(email,password);
-        let result = await fetch('https://e-dashborad.onrender.com/login',{
+        let result = await fetch('https://e-dashboard-x01t.onrender.com/login',{
             method:'post',
             body:JSON.stringify({email,password}),
             headers:{
