@@ -16,12 +16,13 @@ const Product = require('./db/Product');
 app.use(cors()); // Enable CORS for the app
 
 // Middleware to parse incoming JSON data in requests
-//app.use(express.json());
+app.use(express.json());
+app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 8000
 
 // API endpoint to register a new user
-app.post('/register', bodyParser, async (req, res) => {
+app.post('/register', async (req, res) => {
     try {
         console.log(req.body);
         let user = new User(req.body); // Create a new User object based on request body
