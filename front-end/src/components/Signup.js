@@ -31,7 +31,7 @@ export default function Signup() {
           method:'post',
           //We are using json.stringify just because we are send data so data should be in Json format
           //The data we got by using use state will be now sent to database for registration
-          body:JSON.stringify(res),
+          body:JSON.stringify({res}),
           headers:{
             'Content-type':'application/json'
           }
