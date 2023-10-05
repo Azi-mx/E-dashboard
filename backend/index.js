@@ -17,7 +17,7 @@ app.use(cors()); // Enable CORS for the app
 
 // Middleware to parse incoming JSON data in requests
 app.use(express.json());
-app.use(bodyParser.json());
+app.use(body.json());
 
 const PORT = process.env.PORT || 8000
 
