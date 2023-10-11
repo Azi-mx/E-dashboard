@@ -55,7 +55,7 @@ export default function Login() {
                     <h3>Welcome Back To <strong>Damas</strong></h3>
                     <p className="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
                   </div>
-                  <form action="#" method="post">
+                  
                     <div className="form-group first">
                       <label for="username">Email</label>
                       <input className="form-control" id="username" type='text' value={email} onChange={(e) => setEmail(e.target.value)}></input>
@@ -90,7 +90,7 @@ export default function Login() {
                         <span className="icon-google mr-3"></span>
                       </a>
                     </div>
-                  </form>
+                
                 </div>
               </div>
 

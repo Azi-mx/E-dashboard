@@ -70,37 +70,46 @@ function ProductList() {
             <input type="text" className='search' onChange={searchhandle} placeholder='Search Product' />
 
             <table class="table">
-            <thead class="thead-dark">
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">Category</th>
-      <th scope="col">Company</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-            {/* Render product list */}
-            {products.length > 0 ? products.map((i, index) =>
-                <ul key={i._id}>
-                    <li>{index + 1}</li>
-                    <li>{i.name}</li>
-                    <li>${i.price}</li>
-                    <li>{i.category}</li>
-                    <li>{i.company}</li>
-                    <li>
-                        {/* Delete button with an onclick handler */}
-                        <button type="button" onClick={() => deleteProduct(i._id)} className="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-                        {/* Update button as a Link */}
-                        
-                        <Link to={`/update/${i._id}`}><button type="button" className="btn btn-warning"><i class="fa-solid fa-pen"></i></button>
-                        </Link>
-                    </li>
-                </ul>
-            )
-                :
-                <h1>No Result Found</h1>
-            }
-  </table>
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Company</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {/* Render product list */}
+                    
+                        {products.length > 0 ? products.map((i, index) =>
+                        <tr key={i._id}>
+                           
+                                <td>{index + 1}</td>
+                                <td>{i.name}</td>
+                                <td>${i.price}</td>
+                                <td>{i.category}</td>
+                                <td>{i.company}</td>
+                                <td>
+                                    {/* Delete button with an onclick handler */}
+                                    <button type="button" onClick={() => deleteProduct(i._id)} className="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                    {/* Update button as a Link */}
+
+                                    <Link to={`/update/${i._id}`}><button type="button" className="btn btn-warning"><i class="fa-solid fa-pen"></i></button>
+                                    </Link>
+                                </td>
+                            </tr>
+                        )
+                             :
+                             <tr>
+                            <td colSpan="6"><h1>No Result Found</h1></td>
+                            </tr>
+                        }
+                    
+
+                </tbody>
+            </table>
 
         </div>
     );
