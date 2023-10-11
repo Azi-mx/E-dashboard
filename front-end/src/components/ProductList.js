@@ -15,7 +15,7 @@ function ProductList() {
         // Send a GET request to fetch products, including the authorization token
         let result = await fetch('https://e-dashboard-x01t.onrender.com/products', {
             headers: {
-                authorization:`bearer ${JSON.parse(localStorage.getItem('token'))}`
+                authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
             }
         });
 
@@ -30,7 +30,7 @@ function ProductList() {
         let result = await fetch(`https://e-dashboard-x01t.onrender.com/product/${id}`, {
             method: 'Delete',
             headers: {
-                authorization:`bearer ${JSON.parse(localStorage.getItem('token'))}`
+                authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
             }
 
         });
@@ -68,14 +68,17 @@ function ProductList() {
             <h1>Product List</h1>
             {/* Input field for product search */}
             <input type="text" className='search' onChange={searchhandle} placeholder='Search Product' />
-            <ul>
-                <li>S. No</li>
-                <li>Name</li>
-                <li>Price</li>
-                <li>Category</li>
-                <li>Company</li>
-                <li>Actions</li>
-            </ul>
+
+            <table class="table">
+            <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Category</th>
+      <th scope="col">Company</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
             {/* Render product list */}
             {products.length > 0 ? products.map((i, index) =>
                 <ul key={i._id}>
@@ -86,15 +89,19 @@ function ProductList() {
                     <li>{i.company}</li>
                     <li>
                         {/* Delete button with an onclick handler */}
-                        <button type="button" onClick={() => deleteProduct(i._id)} className="btn btn-danger">Delete</button>
+                        <button type="button" onClick={() => deleteProduct(i._id)} className="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                         {/* Update button as a Link */}
-                        <Link to={`/update/${i._id}`}><button type="button" className="btn btn-warning">Update</button></Link>
+                        
+                        <Link to={`/update/${i._id}`}><button type="button" className="btn btn-warning"><i class="fa-solid fa-pen"></i></button>
+                        </Link>
                     </li>
                 </ul>
             )
-            :
-            <h1>No Result Found</h1>
+                :
+                <h1>No Result Found</h1>
             }
+  </table>
+
         </div>
     );
 }

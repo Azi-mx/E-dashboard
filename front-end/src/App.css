@@ -18,15 +18,15 @@
 .nav-ul {
   padding: 10px;
   margin: 0;
-  background-color: skyblue;
+  background-color: #5B5CFF;
 }
 
 .footer {
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   text-align: center;
   width: 100%;
-  background-color: skyblue;
+  background-color: #5B5CFF;
 }
 
 .register,
@@ -51,13 +51,12 @@
   margin: 25px;
   padding: 7px;
   width: 300px;
-  border: 1px solid skyblue;
+  border: 1px solid #5B5CFF;
 }
 
-.login {
-  margin-left: 30%;
-  margin-top: 100px;
-}
+/* .login {
+
+} */
 
 .app-button {
   margin: 30px;
@@ -92,6 +91,7 @@
 }
 
 .btn {
+  margin: 5px;
   padding: 5px;
 }
 
