@@ -185,7 +185,9 @@ a {
   .control--checkbox input:disabled:checked ~ .control__indicator {
     background-color: #7e0cf5;
     opacity: .2; }
-
+    .navbar{
+      background-color: #5B5CFF
+    }
     /* @media (max-width: 758px){
       .img-fluid{
         display: none;
