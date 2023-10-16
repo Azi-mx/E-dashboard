@@ -91,7 +91,7 @@ export default function Signup() {
 
                   <div className="d-flex mb-5 align-items-center">
                     <label className="control control--checkbox mb-0"><span className="caption">Remember me</span>
-                      {/* <input type="checkbox" checked="checked" /> */}
+                     <input type="checkbox"/> 
                       <div className="control__indicator"></div>
                     </label>
                     <span className="ml-auto"><a href="#" className="forgot-pass">Forgot Password</a></span>
