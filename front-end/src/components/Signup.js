@@ -19,6 +19,29 @@ export default function Signup() {
     }
   }, [])
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    if (name === 'name') {
+      setName(value);
+    } else if (name === 'email') {
+      setEmail(value);
+    } else if (name === 'password') {
+      setPassword(value);
+    }
+
+    // Your existing onChange logic
+    // ...
+
+    // Add class based on the content of the input
+    const field = e.target.closest('.form-group');
+    if (field) {
+      if (value.trim() !== '') {
+        field.classList.add('field--not-empty');
+      } else {
+        field.classList.remove('field--not-empty');
+      }
+    }
+  };
   const collectData = async () => {
     console.warn(name, email, password)
     if (name, email, password) {
@@ -52,10 +75,14 @@ export default function Signup() {
       if (result) {
         navigate('/')
       }
+
+
+
       flag = 0
     } else {
       flag = 1;
     }
+
   }
   return (
     <>
@@ -76,17 +103,36 @@ export default function Signup() {
 
                   <div class="form-group first">
                     <label for="username">Username</label>
-                    <input class="form-control" type='text' value={name} onChange={(e) => setName(e.target.value)}></input>
+                    <input
+                      className={`form-control ${name ? 'field--not-empty' : ''}`}
+                      type="text"
+                      name="name"
+                      value={name}
+                      onChange={handleInputChange}
+                    />
                   </div>
 
                   <div class="form-group first">
                     <label for="username">Email</label>
-                    <input class="form-control" type='text' value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                    <input
+                      className={`form-control ${email ? 'field--not-empty' : ''}`}
+                      type="text"
+                      name="email"
+                      value={email}
+                      onChange={handleInputChange}
+                    />
                   </div>
 
                   <div class="form-group first last mb-4">
                     <label for="password">Password</label>
-                    <input class="form-control" type='password' value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                    <input
+                      className={`form-control ${password ? 'field--not-empty' : ''}`}
+                      type="password"
+                      name="password"
+                      value={password}
+                      onChange={handleInputChange}
+                    />
+
                   </div>
 
                   <div className="d-flex mb-5 align-items-center">
