@@ -24,6 +24,7 @@ const PORT = process.env.PORT || 8000
 // API endpoint to register a new user
 app.post('/register', async (req, res) => {
     try {
+        if (req.body.password && req.body.email){
         console.log(req.body);
         let user = new User(req.body); // Create a new User object based on request body
         let Createuser = await user.save(); // Save the user object in the database
@@ -45,6 +46,7 @@ app.post('/register', async (req, res) => {
                 res.send({ Createuser, auth: token });
             });
         }
+    }
     } catch (err) {
         res.status(400).send(err); // Handle registration error
     }

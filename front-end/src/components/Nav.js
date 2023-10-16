@@ -11,7 +11,6 @@ export default function Nav() {
   }
   return (
     <div>
-
       {auth ?
         <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
