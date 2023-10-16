@@ -6,6 +6,7 @@ export default function Signup() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  let flag;
   const navigate = useNavigate()
 
 
@@ -20,6 +21,7 @@ export default function Signup() {
 
   const collectData = async () => {
     console.warn(name, email, password)
+    if(name, email, password){
     const res = {
       name: name,
       email: email,
@@ -50,6 +52,10 @@ export default function Signup() {
     if (result) {
       navigate('/')
     }
+    flag = 0
+  }else{
+    flag = 1;
+  }
   }
   return (
     <>
