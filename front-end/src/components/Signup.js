@@ -17,8 +17,13 @@ export default function Signup() {
     if (auth) {
       navigate('/')
     }
-  }, [])
+  }, [navigate])
+// Validations
 
+
+
+
+  // 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     if (name === 'name') {
@@ -29,9 +34,7 @@ export default function Signup() {
       setPassword(value);
     }
 
-    // Your existing onChange logic
-    // ...
-
+  
     // Add class based on the content of the input
     const field = e.target.closest('.form-group');
     if (field) {
@@ -42,6 +45,8 @@ export default function Signup() {
       }
     }
   };
+
+  
   const collectData = async () => {
     console.warn(name, email, password)
     if (name, email, password) {
