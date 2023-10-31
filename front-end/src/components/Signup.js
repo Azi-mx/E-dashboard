@@ -162,7 +162,7 @@ export default function Signup() {
                     <a href="#" className="twitter">
                       <span className="icon-twitter mr-3"></span>
                     </a>
-                    <a href="#" className="google">
+                    <a href="/auth/google" className="google">
                       <span className="icon-google mr-3"></span>
                     </a>
                   </div>

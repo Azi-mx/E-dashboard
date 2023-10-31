@@ -14,12 +14,23 @@ const bodyParser = body.urlencoded({ extended: false })
 const Product = require('./db/Product');
 
 app.use(cors()); // Enable CORS for the app
-
+const session = require('express-session');
+app.use(session({
+    secret: 'testSecret',
+    resave: true,
+    saveUninitialized: true,
+    // store: new MongoStore({ mongooseConnection: mongoose.connection }),
+  }));  
+const passport = require('passport')
+app.use(passport.initialize())
+app.use(passport.session())
 // Middleware to parse incoming JSON data in requests
 app.use(express.json());
 app.use(body.json());
 
 const PORT = process.env.PORT || 8000
+const googleauthenticate = require('./middleware/googleauth')
+require('./middleware/googleauth')
 
 // API endpoint to register a new user
 app.post('/register', async (req, res) => {
@@ -168,6 +179,10 @@ async function verifyToken(req, res, next) {
     }
     // console.log('middleware called', token); // Log token for verification
 }
+
+app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+app.get('/auth/google/callback',passport.authenticate('google', {failureRedirect: '/'}),googleauthenticate) 
+
 
 // Start the server on port 8000
 app.listen(PORT, () => {
