@@ -163,7 +163,7 @@ export default function Signup() {
                       <span className="icon-twitter mr-3"></span>
                     </a>
                     <a href="" className="google">
-                      <span className="icon-google mr-3" onClick ={googleauth()}></span>
+                      {/* <span className="icon-google mr-3" onClick ={googleauth()}></span> */}
                     </a>
                   </div>
 
